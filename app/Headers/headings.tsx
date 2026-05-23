@@ -36,6 +36,14 @@ const handleLinkedIn = () => {
     window.open(linkedInProfile.value, "_blank");
 }
 export default function Headings() {
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault();
+        const element = document.getElementById("about");
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <>
             <header className="w-full h-13 bg-[#1C1917] text-[#FAF6F0]">
@@ -44,12 +52,13 @@ export default function Headings() {
                         Tanya Multani
                     </h3>
                     <nav className="flex items-center gap-8">
-                        <Link
-                            href="/"
+                        <a
+                            href="#about"
+                            onClick={handleScroll}
                             className="text-[15px] font-medium font-['Inter'] hover:text-slate-300 transition-colors duration-300"
                         >
-                            Home
-                        </Link>
+                            About
+                        </a>
 
                         <Link
                             href="/experience"
