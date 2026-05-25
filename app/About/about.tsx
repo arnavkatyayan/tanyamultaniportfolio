@@ -57,8 +57,8 @@ const aboutCards = [
 ];
 export default function About() {
     return (
-        <section id="about" className="w-full bg-[#F9E8D9] h-[500px] flex items-center relative">
-            <div className="flex flex-col justify-center absolute top-10 left-10 gap-4 max-w-[40%]">
+        <section id="about" className="w-full bg-[#F9E8D9] h-[550px] flex items-center relative border-b border-[#8B1A2B]">
+            <div className="flex flex-col justify-center absolute top-10 left-10 gap-4 max-w-[50%]">
                 <p className={`${playfair.className} text-[20px] font-semibold text-[#8B1A2B] text-left`}>About Me</p>
                 <p className={`${inter.className} text-[40px] font-bold text-black text-left`}>
                     Turning Potential into purpose - <br />one person at a time
