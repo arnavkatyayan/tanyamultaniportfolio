@@ -4,6 +4,7 @@ import Headers from "./Headers";
 import About from "./About";
 import Experience from "./Experience";
 import Skills from "./Skills";
+import Contact from "./Contact";
 export default function Home() {
   return (
     <>
@@ -11,6 +12,7 @@ export default function Home() {
       <About />
       <Experience />
       <Skills />
+      <Contact/>
     </>
   );
 }
