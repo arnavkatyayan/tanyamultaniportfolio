@@ -3,6 +3,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  Briefcase
 } from "lucide-react";
 import { Playfair_Display, Inter } from "next/font/google";
 import ContactForm from "./contactform";
@@ -31,6 +32,11 @@ export default function Contact() {
             icon: MapPin,
             value: "Ahilyanagar, Ahmednagar",
         },
+        {
+            id:4,
+            icon: Briefcase,
+            value:"https://www.linkedin.com/in/tanya-multani-000363214/"
+        }
     ];
 
     return (
