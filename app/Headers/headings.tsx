@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Playfair_Display, Inter } from "next/font/google";
 import Image from "next/image";
+
 const playfair = Playfair_Display({
     subsets: ["latin"],
     weight: ["600"],
@@ -34,6 +35,12 @@ const linkedInProfile = {
 const handleLinkedIn = () => {
     window.open(linkedInProfile.value, "_blank");
 };
+
+const handleConnect = () => {
+    document.getElementById("contact")?.scrollIntoView({
+        behavior: "smooth",
+    });
+}
 export default function Headings() {
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
@@ -59,28 +66,28 @@ export default function Headings() {
                         </a>
 
                         <Link
-                            href="/experience"
+                            href="#experience"
                             className="text-[14px] font-medium font-['Inter'] hover:text-slate-300 transition-colors duration-300"
                         >
                             Experience
                         </Link>
 
                         <Link
-                            href="/skills"
+                            href="#skills"
                             className="text-[14px] font-medium font-['Inter'] hover:text-slate-300 transition-colors duration-300"
                         >
                             Skills
                         </Link>
 
                         <Link
-                            href="/projects"
+                            href="#projects"
                             className="text-[14px] font-medium font-['Inter'] hover:text-slate-300 transition-colors duration-300"
                         >
-                            Projects
+                            Achievements
                         </Link>
                     </nav>
 
-                    <button className="w-full rounded-md bg-[#8B1A2B] px-5 py-2 text-sm font-medium text-[#FAF6F0] transition-all duration-300 hover:bg-[#701524] md:w-auto">
+                    <button onClick={handleConnect} className="w-full rounded-md bg-[#8B1A2B] px-5 py-2 text-sm font-medium text-[#FAF6F0] transition-all duration-300 hover:bg-[#701524] md:w-auto">
                         Let&apos;s Connect
                     </button>
                 </div>

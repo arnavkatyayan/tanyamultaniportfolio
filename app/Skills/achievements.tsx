@@ -34,7 +34,7 @@ const achievementsObj = [
 
 export default function Achievements() {
     return (
-        <section className="w-full bg-[#2A2623] py-10">
+        <section id="projects" className="w-full bg-[#2A2623] py-10">
             <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 text-center sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
                 {achievementsObj.map((obj) => {
                     const Icon = obj.icon;
