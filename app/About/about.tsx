@@ -16,12 +16,9 @@ const inter = Inter({
 });
 const aboutContent = {
     heading: "Turning potential into purpose — one person at a time",
-
-    description1: `I’m a psychology-trained counsellor with a genuine passion for human development.Whether working with children with special needs, college students preparing for careers, or individuals navigating life transitions. I show up with empathy, expertise, and a structured approach.`,
-
+    description1: `I’m a psychology-trained counsellor with a genuine passion for human development. Whether working with children with special needs, college students preparing for careers, or individuals navigating life transitions, I show up with empathy, expertise, and a structured approach.`,
     description2:
         "I also run CalmNest, my independent counselling practice, offering one-on-one therapy, play therapy, and teen guidance.",
-
     qualifications: [
         "M.A. Clinical Psychology — Ahmednagar College, 2023",
         "Diploma in Special Education (IDD) — 2025",
@@ -38,7 +35,6 @@ const aboutCards = [
             "Independent practice offering play therapy, REBT, and career counselling for parents, children, and CWSN.",
         icon: HeartHandshake,
     },
-
     {
         id: 2,
         title: "Published writer & national award winner",
@@ -46,7 +42,6 @@ const aboutCards = [
             "Certified novel writer, creative copywriter, and 1st prize winner at National Poetry Competition, Pune.",
         icon: PenSquare,
     },
-
     {
         id: 3,
         title: "Special education & inclusion advocate",
@@ -55,50 +50,56 @@ const aboutCards = [
         icon: GraduationCap,
     },
 ];
+
 export default function About() {
     return (
-        <section id="about" className="w-full bg-[#F9E8D9] h-[550px] flex items-center relative border-b border-[#8B1A2B]">
-            <div className="flex flex-col justify-center absolute top-10 left-10 gap-4 max-w-[50%]">
-                <p className={`${playfair.className} text-[20px] font-semibold text-[#8B1A2B] text-left`}>About Me</p>
-                <p className={`${inter.className} text-[40px] font-bold text-black text-left`}>
-                    Turning Potential into purpose - <br />one person at a time
-                </p>
-                <p className="text-[#6B3A2A] font-medium">{aboutContent.description1 + aboutContent.description2}</p>
-                <ul className="flex flex-col gap-2 mt-2">
-                    {aboutContent.qualifications.map((qualification) => (
-                        <li key={qualification} className={`${inter.className} text-[15px] font-bold text-[#8B1A2B]`}>
-                            {qualification}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="flex flex-col justify-center absolute top-10 right-10 gap-6 max-w-[40%]">
-                {aboutCards.map((card) => {
-                    const Icon = card.icon;
+        <section id="about" className="w-full bg-[#F9E8D9] border-b border-[#8B1A2B]">
+            <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-[1.2fr,0.8fr] lg:px-8">
+                <div className="flex flex-col gap-6">
+                    <p className={`${playfair.className} text-[20px] font-semibold text-[#8B1A2B]`}>
+                        About Me
+                    </p>
+                    <p className={`${inter.className} text-[32px] font-bold text-black leading-tight sm:text-[36px]`}>
+                        Turning Potential into purpose — <br />one person at a time
+                    </p>
+                    <p className="text-[#6B3A2A] font-medium leading-7">
+                        {aboutContent.description1} {aboutContent.description2}
+                    </p>
+                    <ul className="flex flex-col gap-2 mt-2">
+                        {aboutContent.qualifications.map((qualification) => (
+                            <li key={qualification} className={`${inter.className} text-[15px] font-bold text-[#8B1A2B]`}>
+                                {qualification}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-                    return (
-                        <div
-                            key={card.id}
-                            className="bg-white border border-[#E8DFD8] rounded-3xl p-6 flex gap-4"
-                        >
-                            <div className="w-14 h-14 rounded-2xl bg-[#EFE5DF] flex items-center justify-center">
-                                <Icon className="w-6 h-6 text-[#8B1A2B]" />
+                <div className="flex flex-col gap-6">
+                    {aboutCards.map((card) => {
+                        const Icon = card.icon;
+                        return (
+                            <div
+                                key={card.id}
+                                className="bg-white border border-[#E8DFD8] rounded-3xl p-6 shadow-sm"
+                            >
+                                <div className="flex gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-[#EFE5DF] flex items-center justify-center">
+                                        <Icon className="w-6 h-6 text-[#8B1A2B]" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="font-semibold text-lg text-[#1C1917]">
+                                            {card.title}
+                                        </h3>
+                                        <p className="text-[#6B625D] text-sm leading-7 mt-2">
+                                            {card.description}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div>
-                                <h3 className="font-semibold text-lg text-[#1C1917]">
-                                    {card.title}
-                                </h3>
-
-                                <p className="text-[#6B625D] text-sm leading-[1.8] mt-2">
-                                    {card.description}
-                                </p>
-                            </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
             </div>
-
         </section>
     );
-}
+} 

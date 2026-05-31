@@ -34,35 +34,21 @@ const achievementsObj = [
 
 export default function Achievements() {
     return (
-        <section className="w-full h-[200px] bg-[#2A2623]">
-            <div className="flex items-center justify-center gap-10 h-full">
-
+        <section className="w-full bg-[#2A2623] py-10">
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 text-center sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
                 {achievementsObj.map((obj) => {
-
                     const Icon = obj.icon;
-
                     return (
-                        <div
-                            key={obj.id}
-                            className="flex flex-col items-center"
-                        >
-
-                            <div className="w-14 h-14 border border-[#8B1A2B] rounded-xl flex items-center justify-center bg-[#3B1118]">
-                                <Icon className="text-[#B3263E] w-6 h-6" />
+                        <div key={obj.id} className="flex flex-col items-center gap-3 rounded-3xl bg-[#3B1118] p-6 shadow-lg">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#8B1A2B] bg-[#3B1118]">
+                                <Icon className="w-6 h-6 text-[#B3263E]" />
                             </div>
-
-                            <h3 className="text-white font-semibold mt-3">
-                                {obj.title}
-                            </h3>
-
-                            <p className="text-gray-400 text-sm text-center">
-                                {obj.description}
-                            </p>
-
+                            <h3 className="text-white font-semibold">{obj.title}</h3>
+                            <p className="text-gray-400 text-sm">{obj.description}</p>
                         </div>
                     );
                 })}
             </div>
         </section>
     );
-}
+} 
